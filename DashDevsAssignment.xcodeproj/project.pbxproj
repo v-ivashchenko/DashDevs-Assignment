@@ -79,7 +79,7 @@
 				FA0078C42BE2458A002FEB2B /* Info.plist */,
 				FA0078B62BE24589002FEB2B /* AppDelegate.swift */,
 				FA0078B82BE24589002FEB2B /* SceneDelegate.swift */,
-				FA0078BA2BE24589002FEB2B /* CharacterListViewController.swift */,
+				FA0078DA2BE250F3002FEB2B /* Character List */,
 				FA0078D72BE24B69002FEB2B /* Supporting Files */,
 			);
 			path = DashDevsAssignment;
@@ -100,6 +100,22 @@
 				FA0078C12BE2458A002FEB2B /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA0078DA2BE250F3002FEB2B /* Character List */ = {
+			isa = PBXGroup;
+			children = (
+				FA0078DB2BE250FD002FEB2B /* Presentation */,
+			);
+			path = "Character List";
+			sourceTree = "<group>";
+		};
+		FA0078DB2BE250FD002FEB2B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FA0078BA2BE24589002FEB2B /* CharacterListViewController.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
