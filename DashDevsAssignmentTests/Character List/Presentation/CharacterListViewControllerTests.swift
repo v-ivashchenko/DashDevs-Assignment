@@ -14,4 +14,13 @@ final class CharacterListViewControllerTests: XCTestCase {
         
         XCTAssertNotNil(sut.tableView.dataSource)
     }
+    
+    func test_numberOfRowsInSection_equalsZeroOnViewDidLoad() {
+        let sut = CharacterListViewController()
+        
+        sut.loadViewIfNeeded()
+        let numberOfRows = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
+        
+        XCTAssertEqual(numberOfRows, 0)
+    }
 }
