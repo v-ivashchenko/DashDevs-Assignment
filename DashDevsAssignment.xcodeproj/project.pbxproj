@@ -23,6 +23,7 @@
 		FA0078F92BE2A46F002FEB2B /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078F82BE2A46F002FEB2B /* SharedTestHelpers.swift */; };
 		FA0078FC2BE2AA10002FEB2B /* GetAllCharactersMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */; };
 		FA0078FE2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */; };
+		FA0079002BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		FA0078F82BE2A46F002FEB2B /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersMapper.swift; sourceTree = "<group>"; };
 		FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersMapperTests.swift; sourceTree = "<group>"; };
+		FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+convenienceinit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		FA0078DD2BE25744002FEB2B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */,
 				FA0078F82BE2A46F002FEB2B /* SharedTestHelpers.swift */,
 				FA0078DE2BE25751002FEB2B /* XCTestCase+trackForMemoryLeaks.swift */,
 			);
@@ -342,6 +345,7 @@
 				FA0078F92BE2A46F002FEB2B /* SharedTestHelpers.swift in Sources */,
 				FA0078F32BE2A34E002FEB2B /* GetAllCharactersRequestTests.swift in Sources */,
 				FA0078E32BE259BA002FEB2B /* CharacterListViewControllerTests.swift in Sources */,
+				FA0079002BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift in Sources */,
 				FA0078D12BE24A1A002FEB2B /* SceneDelegateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
