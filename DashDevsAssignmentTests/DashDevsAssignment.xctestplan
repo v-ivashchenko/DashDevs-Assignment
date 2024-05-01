@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "197DBE7F-C62A-4F60-B399-8D2D7F1EE750",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:DashDevsAssignment.xcodeproj",
+          "identifier" : "FA0078B22BE24589002FEB2B",
+          "name" : "DashDevsAssignment"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DashDevsAssignment.xcodeproj",
+      "identifier" : "FA0078B22BE24589002FEB2B",
+      "name" : "DashDevsAssignment"
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:DashDevsAssignment.xcodeproj",
+        "identifier" : "FA0078CD2BE24A1A002FEB2B",
+        "name" : "DashDevsAssignmentTests"
+      }
+    }
+  ],
+  "version" : 1
+}
