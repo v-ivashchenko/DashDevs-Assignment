@@ -13,6 +13,7 @@
 		FA0078C02BE2458A002FEB2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0078BF2BE2458A002FEB2B /* Assets.xcassets */; };
 		FA0078C32BE2458A002FEB2B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FA0078C22BE2458A002FEB2B /* Base */; };
 		FA0078D12BE24A1A002FEB2B /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078D02BE24A1A002FEB2B /* SceneDelegateTests.swift */; };
+		FA0078DF2BE25751002FEB2B /* XCTestCase+trackForMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078DE2BE25751002FEB2B /* XCTestCase+trackForMemoryLeaks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		FA0078CE2BE24A1A002FEB2B /* DashDevsAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashDevsAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0078D02BE24A1A002FEB2B /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 		FA0078DC2BE25212002FEB2B /* DashDevsAssignment.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DashDevsAssignment.xctestplan; sourceTree = "<group>"; };
+		FA0078DE2BE25751002FEB2B /* XCTestCase+trackForMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+trackForMemoryLeaks.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				FA0078D02BE24A1A002FEB2B /* SceneDelegateTests.swift */,
 				FA0078DC2BE25212002FEB2B /* DashDevsAssignment.xctestplan */,
+				FA0078DD2BE25744002FEB2B /* Shared */,
 			);
 			path = DashDevsAssignmentTests;
 			sourceTree = "<group>";
@@ -118,6 +121,14 @@
 				FA0078BA2BE24589002FEB2B /* CharacterListViewController.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FA0078DD2BE25744002FEB2B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FA0078DE2BE25751002FEB2B /* XCTestCase+trackForMemoryLeaks.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0078DF2BE25751002FEB2B /* XCTestCase+trackForMemoryLeaks.swift in Sources */,
 				FA0078D12BE24A1A002FEB2B /* SceneDelegateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
