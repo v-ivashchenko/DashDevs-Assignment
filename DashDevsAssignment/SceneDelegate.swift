@@ -12,6 +12,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         
         window = UIWindow(windowScene: windowScene)
+        configureWindow()
+    }
+    
+    func configureWindow() {
         window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
     }

@@ -12,7 +12,7 @@
 		FA0078BB2BE24589002FEB2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078BA2BE24589002FEB2B /* ViewController.swift */; };
 		FA0078C02BE2458A002FEB2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0078BF2BE2458A002FEB2B /* Assets.xcassets */; };
 		FA0078C32BE2458A002FEB2B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FA0078C22BE2458A002FEB2B /* Base */; };
-		FA0078D12BE24A1A002FEB2B /* DashDevsAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078D02BE24A1A002FEB2B /* DashDevsAssignmentTests.swift */; };
+		FA0078D12BE24A1A002FEB2B /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078D02BE24A1A002FEB2B /* SceneDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 		FA0078C22BE2458A002FEB2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0078C42BE2458A002FEB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0078CE2BE24A1A002FEB2B /* DashDevsAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashDevsAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA0078D02BE24A1A002FEB2B /* DashDevsAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashDevsAssignmentTests.swift; sourceTree = "<group>"; };
+		FA0078D02BE24A1A002FEB2B /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 		FA0078CF2BE24A1A002FEB2B /* DashDevsAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA0078D02BE24A1A002FEB2B /* DashDevsAssignmentTests.swift */,
+				FA0078D02BE24A1A002FEB2B /* SceneDelegateTests.swift */,
 			);
 			path = DashDevsAssignmentTests;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA0078D12BE24A1A002FEB2B /* DashDevsAssignmentTests.swift in Sources */,
+				FA0078D12BE24A1A002FEB2B /* SceneDelegateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
