@@ -15,7 +15,8 @@ struct GetAllCharactersMapper {
     
     static func map(data: Data, from response: HTTPURLResponse) throws -> Response {
         guard response.statusCode == 200 else { throw Error.invalidStatusCode(response.statusCode) }
+        guard let decodedData = try? JSONDecoder().decode(Response.self, from: data) else { throw Error.invalidData }
         
-        return Response()
+        return decodedData
     }
 }

@@ -15,6 +15,12 @@ final class GetAllCharactersMapperTests: XCTestCase {
         }
     }
     
+    func test_map_throwsErrorOn200HTTPResponseWithInvalidData() {
+        let data = Data("invalid data".utf8)
+
+        expectToCompleteWith(data: data, statusCode: 200, expectedError: .invalidData)
+    }
+    
     // MARK: - Helpers
     private func expectToCompleteWith(
         data: Data = anyData,
