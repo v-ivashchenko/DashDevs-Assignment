@@ -144,6 +144,7 @@
 		FA0078DD2BE25744002FEB2B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FA0078F82BE2A46F002FEB2B /* SharedTestHelpers.swift */,
 				FA0078DE2BE25751002FEB2B /* XCTestCase+trackForMemoryLeaks.swift */,
 			);
 			path = Shared;
