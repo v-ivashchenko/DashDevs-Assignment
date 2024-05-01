@@ -7,4 +7,5 @@ import Foundation
 class CharacterListViewModel {
     
     private(set) var title = "Characters"
+    private(set) var filters = [String]()
 }
