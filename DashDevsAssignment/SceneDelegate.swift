@@ -8,7 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     // MARK: - Private properties
     private lazy var navigationController = UINavigationController(rootViewController: rootViewController)
-    private lazy var rootViewController = ViewController()
+    private lazy var rootViewController = CharacterListViewController()
     
     // MARK: - Public properties
     var window: UIWindow?
