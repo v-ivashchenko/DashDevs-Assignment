@@ -11,3 +11,7 @@ var baseURL: URL {
 var anyData: Data {
     return Data("any data".utf8)
 }
+
+func makeJSON(_ json: [String: Any]) -> Data {
+    return try! JSONSerialization.data(withJSONObject: json)
+}
