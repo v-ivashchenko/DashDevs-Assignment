@@ -80,8 +80,7 @@
 				FA0078B62BE24589002FEB2B /* AppDelegate.swift */,
 				FA0078B82BE24589002FEB2B /* SceneDelegate.swift */,
 				FA0078BA2BE24589002FEB2B /* ViewController.swift */,
-				FA0078BF2BE2458A002FEB2B /* Assets.xcassets */,
-				FA0078C12BE2458A002FEB2B /* LaunchScreen.storyboard */,
+				FA0078D72BE24B69002FEB2B /* Supporting Files */,
 			);
 			path = DashDevsAssignment;
 			sourceTree = "<group>";
@@ -92,6 +91,15 @@
 				FA0078D02BE24A1A002FEB2B /* DashDevsAssignmentTests.swift */,
 			);
 			path = DashDevsAssignmentTests;
+			sourceTree = "<group>";
+		};
+		FA0078D72BE24B69002FEB2B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA0078BF2BE2458A002FEB2B /* Assets.xcassets */,
+				FA0078C12BE2458A002FEB2B /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
