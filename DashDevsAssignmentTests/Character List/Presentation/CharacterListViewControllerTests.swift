@@ -21,6 +21,14 @@ final class CharacterListViewControllerTests: XCTestCase {
         XCTAssertEqual(numberOfRows, 0)
     }
     
+    func test_cellForRowAt_isConcreteCellType() {
+        let sut = makeSUT()
+        
+        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(cell is CharacterListCell)
+    }
+    
     // MARK: - Helpers
     private func makeSUT() -> CharacterListViewController {
         let sut = CharacterListViewController()

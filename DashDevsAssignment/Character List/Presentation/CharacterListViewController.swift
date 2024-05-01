@@ -15,6 +15,7 @@ class CharacterListViewController: UIViewController {
     
     private func setupTableView() {
         tableView.dataSource = self
+        tableView.register(CharacterListCell.self, forCellReuseIdentifier: CharacterListCell.reuseIdentifier)
     }
 }
 
@@ -26,6 +27,8 @@ extension CharacterListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: CharacterListCell.reuseIdentifier, for: indexPath)
+        
+        return cell
     }
 }
