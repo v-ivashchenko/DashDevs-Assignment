@@ -8,19 +8,25 @@ import XCTest
 final class CharacterListViewControllerTests: XCTestCase {
 
     func test_dataSource_isSet() {
-        let sut = CharacterListViewController()
-        
-        sut.loadViewIfNeeded()
+        let sut = makeSUT()
         
         XCTAssertNotNil(sut.tableView.dataSource)
     }
     
     func test_numberOfRowsInSection_equalsZeroOnViewDidLoad() {
-        let sut = CharacterListViewController()
+        let sut = makeSUT()
         
-        sut.loadViewIfNeeded()
         let numberOfRows = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
         
         XCTAssertEqual(numberOfRows, 0)
+    }
+    
+    // MARK: - Helpers
+    private func makeSUT() -> CharacterListViewController {
+        let sut = CharacterListViewController()
+        
+        sut.loadViewIfNeeded()
+        
+        return sut
     }
 }
