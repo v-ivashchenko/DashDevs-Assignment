@@ -16,4 +16,9 @@ enum Design {
             UIFont(name: "Lato-Regular", size: size)!
         }
     }
+    
+    enum Layout {
+        
+        static let defaultPadding: CGFloat = 20
+    }
 }
