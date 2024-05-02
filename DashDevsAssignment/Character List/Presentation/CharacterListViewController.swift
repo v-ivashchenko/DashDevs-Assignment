@@ -24,8 +24,8 @@ class CharacterListViewController: UIViewController {
         super.viewDidLoad()
         
         setupLayout()
-        viewModel.fetchFirstPage {
-            
+        viewModel.fetchFirstPage { [weak self] in
+            self?.tableView.reloadData()
         }
     }
     
