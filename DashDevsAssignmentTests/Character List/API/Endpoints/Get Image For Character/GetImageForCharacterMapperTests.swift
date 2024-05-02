@@ -17,6 +17,14 @@ final class GetImageForCharacterMapperTests: XCTestCase {
         }
     }
     
+    func test_map_deliversResultOn200HTTPResponseWithValidData() throws {
+        let expectedData = anyData
+        
+        let mappedResponse = try SUT.map(data: expectedData, from: HTTPURLResponse(statusCode: 200))
+        
+        XCTAssertEqual(mappedResponse, expectedData)
+    }
+    
     // MARK: - Helpers
     private func expectToCompleteWith(
         data: Data = anyData,
