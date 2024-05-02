@@ -16,6 +16,10 @@ var anyHTTPResponse: HTTPURLResponse {
     return HTTPURLResponse(statusCode: 0)
 }
 
+var successfulHTTPResponse: HTTPURLResponse {
+    return HTTPURLResponse(statusCode: 200)
+}
+
 func anyURL() -> URL {
     return URL(string: "https://any-url.com")!
 }
