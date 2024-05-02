@@ -22,7 +22,7 @@ final class CharacterListViewModelTests: XCTestCase {
     func test_fetchFirstPage_deliversMappedCharacters() {
         let characters = [makeCharacter(), makeCharacter()]
         let expectedRequest = GetAllCharactersRequest.request(to: baseURL)
-        let (sut, client) = makeSUT(stubbedResponse: charactersStubbedResponse(characters: characters))
+        let (sut, client) = makeSUT(characters: characters)
         let expectation = self.expectation(description: "Wait for completion")
         
         sut.fetchFirstPage {
@@ -37,11 +37,11 @@ final class CharacterListViewModelTests: XCTestCase {
     
     // MARK: - Helpers
     private func makeSUT(
-        stubbedResponse: (Data, HTTPURLResponse) = (anyData, anyHTTPResponse),
+        characters: [GetAllCharactersMapper.Character] = [],
         file: StaticString = #filePath,
         line: UInt = #line
     ) -> (CharacterListViewModel, SpyHTTPClient) {
-        let client = SpyHTTPClient(stubbedResponse: stubbedResponse)
+        let client = SpyHTTPClient(stubbedResponse: charactersStubbedResponse(characters: characters))
         let sut = CharacterListViewModel(client: client, baseURL: baseURL)
         
         trackForMemoryLeaks(client, file: file, line: line)
