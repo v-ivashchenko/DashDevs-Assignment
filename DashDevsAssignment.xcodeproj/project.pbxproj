@@ -26,6 +26,7 @@
 		FA0079002BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */; };
 		FA3FF7372BE38D340063F350 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3FF7352BE38D340063F350 /* Lato-Regular.ttf */; };
 		FA3FF7382BE38D340063F350 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3FF7362BE38D340063F350 /* Lato-Bold.ttf */; };
+		FA3FF73D2BE392BE0063F350 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF73C2BE392BE0063F350 /* Design.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+convenienceinit.swift"; sourceTree = "<group>"; };
 		FA3FF7352BE38D340063F350 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FA3FF7362BE38D340063F350 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		FA3FF73C2BE392BE0063F350 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				FA0078B62BE24589002FEB2B /* AppDelegate.swift */,
 				FA0078B82BE24589002FEB2B /* SceneDelegate.swift */,
 				FA0078DA2BE250F3002FEB2B /* Character List */,
+				FA3FF73B2BE392B60063F350 /* Shared */,
 				FA0078D72BE24B69002FEB2B /* Supporting Files */,
 			);
 			path = DashDevsAssignment;
@@ -231,6 +234,14 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
+		FA3FF73B2BE392B60063F350 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FA3FF73C2BE392BE0063F350 /* Design.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -334,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0078E62BE25B68002FEB2B /* CharacterListViewModel.swift in Sources */,
+				FA3FF73D2BE392BE0063F350 /* Design.swift in Sources */,
 				FA0078BB2BE24589002FEB2B /* CharacterListViewController.swift in Sources */,
 				FA0078EF2BE29DED002FEB2B /* CharacterListCell.swift in Sources */,
 				FA0078FC2BE2AA10002FEB2B /* GetAllCharactersMapper.swift in Sources */,
