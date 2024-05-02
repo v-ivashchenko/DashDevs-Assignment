@@ -19,6 +19,18 @@ final class CharacterListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.filters, [])
     }
     
+    func test_fetchFirstPage_mustCompleteOnMainThread() {
+        let (sut, _) = makeSUT()
+        let expectation = self.expectation(description: "Wait for completion")
+        
+        sut.fetchFirstPage {
+            XCTAssertTrue(Thread.isMainThread)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 0.1)
+    }
+    
     func test_fetchFirstPage_deliversMappedCharacters() {
         let characters = [makeCharacter(), makeCharacter()]
         let expectedRequest = GetAllCharactersRequest.request(to: baseURL)

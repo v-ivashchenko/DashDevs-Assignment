@@ -37,7 +37,9 @@ class CharacterListViewModel {
                     .init(id: String($0.id), name: $0.name, species: $0.species, image: nil)
                 }
             
-            completion()
+            await MainActor.run {
+                completion()
+            }
         }
     }
 }
