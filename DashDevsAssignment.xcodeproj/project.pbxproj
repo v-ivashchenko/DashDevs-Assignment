@@ -259,8 +259,7 @@
 		FA0078F62BE2A3AF002FEB2B /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */,
-				FA0078F42BE2A355002FEB2B /* GetAllCharactersRequest.swift */,
+				FA65EED42BE424ED0015A6E0 /* Get All Characters */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -268,8 +267,7 @@
 		FA0078F72BE2A3B6002FEB2B /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */,
-				FA0078F22BE2A34E002FEB2B /* GetAllCharactersRequestTests.swift */,
+				FA65EED62BE4256A0015A6E0 /* Get All Characters */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -314,6 +312,24 @@
 				FA65EECE2BE4055C0015A6E0 /* XCTestCase+makeGetAllCharactersResponse.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		FA65EED42BE424ED0015A6E0 /* Get All Characters */ = {
+			isa = PBXGroup;
+			children = (
+				FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */,
+				FA0078F42BE2A355002FEB2B /* GetAllCharactersRequest.swift */,
+			);
+			path = "Get All Characters";
+			sourceTree = "<group>";
+		};
+		FA65EED62BE4256A0015A6E0 /* Get All Characters */ = {
+			isa = PBXGroup;
+			children = (
+				FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */,
+				FA0078F22BE2A34E002FEB2B /* GetAllCharactersRequestTests.swift */,
+			);
+			path = "Get All Characters";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
