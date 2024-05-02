@@ -20,11 +20,9 @@ final class CharacterListViewModelTests: XCTestCase {
     }
     
     func test_fetchFirstPage_deliversMappedCharacters() {
-        let result = makeGetAllCharactersResponse(characters: [makeCharacter(), makeCharacter()])
-        let json = makeJSON(result.json)
+        let characters = [makeCharacter(), makeCharacter()]
         let expectedRequest = GetAllCharactersRequest.request(to: baseURL)
-        let expectedResponse = HTTPURLResponse(statusCode: 200)
-        let (sut, client) = makeSUT(stubbedResponse: (json, expectedResponse))
+        let (sut, client) = makeSUT(stubbedResponse: charactersStubbedResponse(characters: characters))
         let expectation = self.expectation(description: "Wait for completion")
         
         sut.fetchFirstPage {
@@ -50,25 +48,5 @@ final class CharacterListViewModelTests: XCTestCase {
         trackForMemoryLeaks(sut, file: file, line: line)
         
         return (sut, client)
-    }
-    
-    private class SpyHTTPClient: HTTPClient {
-        
-        enum Message: Equatable {
-            case data(URLRequest)
-        }
-        
-        let stubbedResponse: (Data, HTTPURLResponse)
-        var messages = [Message]()
-        
-        init(stubbedResponse: (Data, HTTPURLResponse)) {
-            self.stubbedResponse = stubbedResponse
-        }
-        
-        func data(for request: URLRequest) async throws -> (Data, HTTPURLResponse) {
-            messages.append(.data(request))
-            
-            return stubbedResponse
-        }
     }
 }

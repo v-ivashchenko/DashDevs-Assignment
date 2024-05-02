@@ -13,9 +13,17 @@ class CharacterListViewModel {
     private(set) var filters = [String]()
     private(set) var characters = [CharacterListCellViewModel]()
     
+    var numberOfRowsInSection: Int {
+        characters.count
+    }
+    
     init(client: HTTPClient, baseURL: URL) {
         self.client = client
         self.baseURL = baseURL
+    }
+    
+    func cellViewModel(at indexPath: IndexPath) -> CharacterListCellViewModel {
+        characters[indexPath.row]
     }
     
     func fetchFirstPage(completion: @escaping () -> Void) {

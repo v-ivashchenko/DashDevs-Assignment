@@ -22,7 +22,7 @@ final class CharacterListViewControllerTests: XCTestCase {
     }
     
     func test_cellForRowAt_isConcreteCellType() {
-        let sut = makeSUT()
+        let sut = makeSUT(characters: [makeCharacter()])
         
         let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
         
@@ -30,8 +30,10 @@ final class CharacterListViewControllerTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    private func makeSUT() -> CharacterListViewController {
-        let sut = CharacterListViewController()
+    private func makeSUT(characters: [GetAllCharactersMapper.Character] = []) -> CharacterListViewController {
+        let client = SpyHTTPClient(stubbedResponse: charactersStubbedResponse(characters: characters))
+        let viewModel = CharacterListViewModel(client: client, baseURL: baseURL)
+        let sut = CharacterListViewController(viewModel: viewModel)
         
         sut.loadViewIfNeeded()
         

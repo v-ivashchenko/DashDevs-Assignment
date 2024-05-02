@@ -7,8 +7,16 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     // MARK: - Private properties
+    private let baseURL = URL(string: "https://rickandmortyapi.com")!
+    
     private lazy var navigationController = UINavigationController(rootViewController: rootViewController)
-    private lazy var rootViewController = CharacterListViewController()
+    private lazy var rootViewController: CharacterListViewController = {
+        let client = URLSessionHTTPClient()
+        let viewModel = CharacterListViewModel(client: client, baseURL: baseURL)
+        let viewController = CharacterListViewController(viewModel: viewModel)
+        
+        return viewController
+    }()
     
     // MARK: - Public properties
     var window: UIWindow?
