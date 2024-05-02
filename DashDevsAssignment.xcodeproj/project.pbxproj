@@ -29,6 +29,7 @@
 		FA3FF7382BE38D340063F350 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3FF7362BE38D340063F350 /* Lato-Bold.ttf */; };
 		FA3FF73D2BE392BE0063F350 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF73C2BE392BE0063F350 /* Design.swift */; };
 		FA3FF73F2BE394950063F350 /* UIFont+toFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF73E2BE394950063F350 /* UIFont+toFont.swift */; };
+		FA3FF7432BE3A0920063F350 /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF7422BE3A0920063F350 /* CharacterDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		FA3FF7362BE38D340063F350 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		FA3FF73C2BE392BE0063F350 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		FA3FF73E2BE394950063F350 /* UIFont+toFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+toFont.swift"; sourceTree = "<group>"; };
+		FA3FF7422BE3A0920063F350 /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				FA0078C42BE2458A002FEB2B /* Info.plist */,
 				FA0078B62BE24589002FEB2B /* AppDelegate.swift */,
 				FA0078B82BE24589002FEB2B /* SceneDelegate.swift */,
+				FA3FF7402BE3A0700063F350 /* Character Details */,
 				FA0078DA2BE250F3002FEB2B /* Character List */,
 				FA3FF73B2BE392B60063F350 /* Shared */,
 				FA0078D72BE24B69002FEB2B /* Supporting Files */,
@@ -248,6 +251,22 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		FA3FF7402BE3A0700063F350 /* Character Details */ = {
+			isa = PBXGroup;
+			children = (
+				FA3FF7412BE3A0870063F350 /* Presentation */,
+			);
+			path = "Character Details";
+			sourceTree = "<group>";
+		};
+		FA3FF7412BE3A0870063F350 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FA3FF7422BE3A0920063F350 /* CharacterDetailsView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -353,6 +372,7 @@
 				FA3FF73F2BE394950063F350 /* UIFont+toFont.swift in Sources */,
 				FA0078E62BE25B68002FEB2B /* CharacterListViewModel.swift in Sources */,
 				FA3FF73D2BE392BE0063F350 /* Design.swift in Sources */,
+				FA3FF7432BE3A0920063F350 /* CharacterDetailsView.swift in Sources */,
 				FA0078BB2BE24589002FEB2B /* CharacterListViewController.swift in Sources */,
 				FA0079022BE2BF63002FEB2B /* CharacterListCellView.swift in Sources */,
 				FA0078EF2BE29DED002FEB2B /* CharacterListCell.swift in Sources */,
