@@ -6,7 +6,7 @@ import XCTest
 @testable import DashDevsAssignment
 
 final class CharacterListViewControllerTests: XCTestCase {
-
+    
     func test_dataSource_isSet() {
         let sut = makeSUT()
         
@@ -30,12 +30,18 @@ final class CharacterListViewControllerTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    private func makeSUT(characters: [GetAllCharactersMapper.Character] = []) -> CharacterListViewController {
+    private func makeSUT(
+        characters: [GetAllCharactersMapper.Character] = [],
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> CharacterListViewController {
         let client = SpyHTTPClient(stubbedResponse: charactersStubbedResponse(characters: characters))
         let viewModel = CharacterListViewModel(client: client, baseURL: baseURL)
         let sut = CharacterListViewController(viewModel: viewModel)
         
         sut.loadViewIfNeeded()
+        
+        trackForMemoryLeaks(sut, file: file, line: line)
         
         return sut
     }
