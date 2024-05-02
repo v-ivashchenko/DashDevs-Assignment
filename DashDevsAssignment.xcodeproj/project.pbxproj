@@ -30,10 +30,12 @@
 		FA3FF73D2BE392BE0063F350 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF73C2BE392BE0063F350 /* Design.swift */; };
 		FA3FF73F2BE394950063F350 /* UIFont+toFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF73E2BE394950063F350 /* UIFont+toFont.swift */; };
 		FA3FF7432BE3A0920063F350 /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF7422BE3A0920063F350 /* CharacterDetailsView.swift */; };
-		FA65EEBF2BE3DD8B0015A6E0 /* UIViewController+snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEBE2BE3DD8B0015A6E0 /* UIViewController+snapshot.swift */; };
-		FA65EEC12BE3DE970015A6E0 /* XCTestCase+snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEC02BE3DE970015A6E0 /* XCTestCase+snapshot.swift */; };
 		FA3FF7452BE3C1650063F350 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF7442BE3C1650063F350 /* HTTPClient.swift */; };
 		FA65EEB92BE3D5700015A6E0 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEB82BE3D5700015A6E0 /* URLSessionHTTPClient.swift */; };
+		FA65EEBF2BE3DD8B0015A6E0 /* UIViewController+snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEBE2BE3DD8B0015A6E0 /* UIViewController+snapshot.swift */; };
+		FA65EEC12BE3DE970015A6E0 /* XCTestCase+snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEC02BE3DE970015A6E0 /* XCTestCase+snapshot.swift */; };
+		FA65EECC2BE3F6950015A6E0 /* CharacterListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EECB2BE3F6950015A6E0 /* CharacterListCellViewModel.swift */; };
+		FA65EECF2BE4055C0015A6E0 /* XCTestCase+makeGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EECE2BE4055C0015A6E0 /* XCTestCase+makeGetAllCharactersResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,10 +76,12 @@
 		FA3FF73C2BE392BE0063F350 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		FA3FF73E2BE394950063F350 /* UIFont+toFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+toFont.swift"; sourceTree = "<group>"; };
 		FA3FF7422BE3A0920063F350 /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
-		FA65EEBE2BE3DD8B0015A6E0 /* UIViewController+snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+snapshot.swift"; sourceTree = "<group>"; };
-		FA65EEC02BE3DE970015A6E0 /* XCTestCase+snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+snapshot.swift"; sourceTree = "<group>"; };
 		FA3FF7442BE3C1650063F350 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FA65EEB82BE3D5700015A6E0 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		FA65EEBE2BE3DD8B0015A6E0 /* UIViewController+snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+snapshot.swift"; sourceTree = "<group>"; };
+		FA65EEC02BE3DE970015A6E0 /* XCTestCase+snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+snapshot.swift"; sourceTree = "<group>"; };
+		FA65EECB2BE3F6950015A6E0 /* CharacterListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCellViewModel.swift; sourceTree = "<group>"; };
+		FA65EECE2BE4055C0015A6E0 /* XCTestCase+makeGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+makeGetAllCharactersResponse.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 				FA0078F12BE2A2B8002FEB2B /* API */,
 				FA0078E72BE25D65002FEB2B /* Feature */,
 				FA0078E12BE259B0002FEB2B /* Presentation */,
+				FA65EECD2BE405460015A6E0 /* Shared */,
 			);
 			path = "Character List";
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 		FA0078E42BE25B55002FEB2B /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				FA65EECB2BE3F6950015A6E0 /* CharacterListCellViewModel.swift */,
 				FA0078E52BE25B68002FEB2B /* CharacterListViewModel.swift */,
 			);
 			path = Feature;
@@ -277,6 +283,14 @@
 				FA3FF7422BE3A0920063F350 /* CharacterDetailsView.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FA65EECD2BE405460015A6E0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FA65EECE2BE4055C0015A6E0 /* XCTestCase+makeGetAllCharactersResponse.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +403,7 @@
 				FA0079022BE2BF63002FEB2B /* CharacterListCellView.swift in Sources */,
 				FA3FF7452BE3C1650063F350 /* HTTPClient.swift in Sources */,
 				FA0078EF2BE29DED002FEB2B /* CharacterListCell.swift in Sources */,
+				FA65EECC2BE3F6950015A6E0 /* CharacterListCellViewModel.swift in Sources */,
 				FA0078FC2BE2AA10002FEB2B /* GetAllCharactersMapper.swift in Sources */,
 				FA0078B72BE24589002FEB2B /* AppDelegate.swift in Sources */,
 				FA0078F52BE2A355002FEB2B /* GetAllCharactersRequest.swift in Sources */,
@@ -410,6 +425,7 @@
 				FA0078F32BE2A34E002FEB2B /* GetAllCharactersRequestTests.swift in Sources */,
 				FA0078E32BE259BA002FEB2B /* CharacterListViewControllerTests.swift in Sources */,
 				FA0079002BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift in Sources */,
+				FA65EECF2BE4055C0015A6E0 /* XCTestCase+makeGetAllCharactersResponse.swift in Sources */,
 				FA0078D12BE24A1A002FEB2B /* SceneDelegateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
