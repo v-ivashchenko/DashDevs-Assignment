@@ -24,6 +24,8 @@
 		FA0078FC2BE2AA10002FEB2B /* GetAllCharactersMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */; };
 		FA0078FE2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */; };
 		FA0079002BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */; };
+		FA3FF7372BE38D340063F350 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3FF7352BE38D340063F350 /* Lato-Regular.ttf */; };
+		FA3FF7382BE38D340063F350 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3FF7362BE38D340063F350 /* Lato-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersMapper.swift; sourceTree = "<group>"; };
 		FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersMapperTests.swift; sourceTree = "<group>"; };
 		FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+convenienceinit.swift"; sourceTree = "<group>"; };
+		FA3FF7352BE38D340063F350 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		FA3FF7362BE38D340063F350 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 		FA0078D72BE24B69002FEB2B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA3FF7362BE38D340063F350 /* Lato-Bold.ttf */,
+				FA3FF7352BE38D340063F350 /* Lato-Regular.ttf */,
 				FA0078BF2BE2458A002FEB2B /* Assets.xcassets */,
 				FA0078C12BE2458A002FEB2B /* LaunchScreen.storyboard */,
 			);
@@ -307,7 +313,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0078C02BE2458A002FEB2B /* Assets.xcassets in Resources */,
+				FA3FF7372BE38D340063F350 /* Lato-Regular.ttf in Resources */,
 				FA0078C32BE2458A002FEB2B /* Base in Resources */,
+				FA3FF7382BE38D340063F350 /* Lato-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
