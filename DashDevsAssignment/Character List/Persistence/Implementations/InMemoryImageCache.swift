@@ -19,6 +19,6 @@ class InMemoryImageCache: ImageCache {
     }
     
     func setImage(_ image: UIImage, by path: String) async throws {
-        
+        cache.setObject(image, forKey: path as NSString)
     }
 }
