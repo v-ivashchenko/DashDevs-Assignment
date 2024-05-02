@@ -19,10 +19,32 @@ final class CharacterListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.filters, [])
     }
     
+    func test_fetchFirstPage_deliversMappedCharacters() {
+        let result = makeGetAllCharactersResponse(characters: [makeCharacter(), makeCharacter()])
+        let json = makeJSON(result.json)
+        let expectedRequest = GetAllCharactersRequest.request(to: baseURL)
+        let expectedResponse = HTTPURLResponse(statusCode: 200)
+        let (sut, client) = makeSUT(stubbedResponse: (json, expectedResponse))
+        let expectation = self.expectation(description: "Wait for completion")
+        
+        sut.fetchFirstPage {
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 0.1)
+    
+        XCTAssertEqual(client.messages, [.data(expectedRequest)])
+        XCTAssertEqual(sut.characters.count, 2)
+    }
+    
     // MARK: - Helpers
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (CharacterListViewModel, SpyHTTPClient) {
-        let client = SpyHTTPClient()
-        let sut = CharacterListViewModel(client: client)
+    private func makeSUT(
+        stubbedResponse: (Data, HTTPURLResponse) = (anyData, anyHTTPResponse),
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> (CharacterListViewModel, SpyHTTPClient) {
+        let client = SpyHTTPClient(stubbedResponse: stubbedResponse)
+        let sut = CharacterListViewModel(client: client, baseURL: baseURL)
         
         trackForMemoryLeaks(client, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
@@ -32,16 +54,21 @@ final class CharacterListViewModelTests: XCTestCase {
     
     private class SpyHTTPClient: HTTPClient {
         
-        enum Message {
+        enum Message: Equatable {
             case data(URLRequest)
         }
         
+        let stubbedResponse: (Data, HTTPURLResponse)
         var messages = [Message]()
+        
+        init(stubbedResponse: (Data, HTTPURLResponse)) {
+            self.stubbedResponse = stubbedResponse
+        }
         
         func data(for request: URLRequest) async throws -> (Data, HTTPURLResponse) {
             messages.append(.data(request))
             
-            return (anyData, anyHTTPResponse)
+            return stubbedResponse
         }
     }
 }
