@@ -24,6 +24,7 @@
 		FA0078FC2BE2AA10002FEB2B /* GetAllCharactersMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */; };
 		FA0078FE2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */; };
 		FA0079002BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */; };
+		FA0079022BE2BF63002FEB2B /* CharacterListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0079012BE2BF63002FEB2B /* CharacterListCellView.swift */; };
 		FA3FF7372BE38D340063F350 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3FF7352BE38D340063F350 /* Lato-Regular.ttf */; };
 		FA3FF7382BE38D340063F350 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3FF7362BE38D340063F350 /* Lato-Bold.ttf */; };
 		FA3FF73D2BE392BE0063F350 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF73C2BE392BE0063F350 /* Design.swift */; };
@@ -62,6 +63,7 @@
 		FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersMapper.swift; sourceTree = "<group>"; };
 		FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersMapperTests.swift; sourceTree = "<group>"; };
 		FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+convenienceinit.swift"; sourceTree = "<group>"; };
+		FA0079012BE2BF63002FEB2B /* CharacterListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListCellView.swift; sourceTree = "<group>"; };
 		FA3FF7352BE38D340063F350 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FA3FF7362BE38D340063F350 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		FA3FF73C2BE392BE0063F350 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0078EE2BE29DED002FEB2B /* CharacterListCell.swift */,
+				FA0079012BE2BF63002FEB2B /* CharacterListCellView.swift */,
 				FA0078BA2BE24589002FEB2B /* CharacterListViewController.swift */,
 			);
 			path = Presentation;
@@ -351,6 +354,7 @@
 				FA0078E62BE25B68002FEB2B /* CharacterListViewModel.swift in Sources */,
 				FA3FF73D2BE392BE0063F350 /* Design.swift in Sources */,
 				FA0078BB2BE24589002FEB2B /* CharacterListViewController.swift in Sources */,
+				FA0079022BE2BF63002FEB2B /* CharacterListCellView.swift in Sources */,
 				FA0078EF2BE29DED002FEB2B /* CharacterListCell.swift in Sources */,
 				FA0078FC2BE2AA10002FEB2B /* GetAllCharactersMapper.swift in Sources */,
 				FA0078B72BE24589002FEB2B /* AppDelegate.swift in Sources */,
