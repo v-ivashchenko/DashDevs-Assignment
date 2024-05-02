@@ -24,6 +24,7 @@
 		FA0078FC2BE2AA10002FEB2B /* GetAllCharactersMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */; };
 		FA0078FE2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */; };
 		FA0079002BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */; };
+		FA3FF7452BE3C1650063F350 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF7442BE3C1650063F350 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		FA0078FB2BE2AA10002FEB2B /* GetAllCharactersMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersMapper.swift; sourceTree = "<group>"; };
 		FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersMapperTests.swift; sourceTree = "<group>"; };
 		FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+convenienceinit.swift"; sourceTree = "<group>"; };
+		FA3FF7442BE3C1650063F350 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		FA0078F02BE2A2B4002FEB2B /* API */ = {
 			isa = PBXGroup;
 			children = (
+				FA3FF7442BE3C1650063F350 /* HTTPClient.swift */,
 				FA0078F62BE2A3AF002FEB2B /* Endpoints */,
 			);
 			path = API;
@@ -327,6 +330,7 @@
 			files = (
 				FA0078E62BE25B68002FEB2B /* CharacterListViewModel.swift in Sources */,
 				FA0078BB2BE24589002FEB2B /* CharacterListViewController.swift in Sources */,
+				FA3FF7452BE3C1650063F350 /* HTTPClient.swift in Sources */,
 				FA0078EF2BE29DED002FEB2B /* CharacterListCell.swift in Sources */,
 				FA0078FC2BE2AA10002FEB2B /* GetAllCharactersMapper.swift in Sources */,
 				FA0078B72BE24589002FEB2B /* AppDelegate.swift in Sources */,
