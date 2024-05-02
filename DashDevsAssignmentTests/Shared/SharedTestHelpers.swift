@@ -12,6 +12,10 @@ var anyData: Data {
     return Data("any data".utf8)
 }
 
+var anyHTTPResponse: HTTPURLResponse {
+    return HTTPURLResponse(statusCode: 0)
+}
+
 func anyURL() -> URL {
     return URL(string: "https://any-url.com")!
 }
