@@ -25,6 +25,7 @@
 		FA0078FE2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */; };
 		FA0079002BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */; };
 		FA3FF7452BE3C1650063F350 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF7442BE3C1650063F350 /* HTTPClient.swift */; };
+		FA65EEB92BE3D5700015A6E0 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEB82BE3D5700015A6E0 /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		FA0078FD2BE2AA24002FEB2B /* GetAllCharactersMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersMapperTests.swift; sourceTree = "<group>"; };
 		FA0078FF2BE2B195002FEB2B /* HTTPURLResponse+convenienceinit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+convenienceinit.swift"; sourceTree = "<group>"; };
 		FA3FF7442BE3C1650063F350 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		FA65EEB82BE3D5700015A6E0 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3FF7442BE3C1650063F350 /* HTTPClient.swift */,
+				FA65EEB82BE3D5700015A6E0 /* URLSessionHTTPClient.swift */,
 				FA0078F62BE2A3AF002FEB2B /* Endpoints */,
 			);
 			path = API;
@@ -336,6 +339,7 @@
 				FA0078B72BE24589002FEB2B /* AppDelegate.swift in Sources */,
 				FA0078F52BE2A355002FEB2B /* GetAllCharactersRequest.swift in Sources */,
 				FA0078B92BE24589002FEB2B /* SceneDelegate.swift in Sources */,
+				FA65EEB92BE3D5700015A6E0 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
