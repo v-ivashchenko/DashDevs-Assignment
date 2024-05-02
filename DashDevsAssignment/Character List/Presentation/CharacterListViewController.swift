@@ -7,6 +7,8 @@ import SwiftUI
 class CharacterListViewController: UIViewController {
 
     private let viewModel: CharacterListViewModel
+    
+    private let titleLabel = UILabel()
     private(set) var tableView = UITableView()
     
     init(viewModel: CharacterListViewModel) {
@@ -28,9 +30,13 @@ class CharacterListViewController: UIViewController {
     }
     
     private func setupLayout() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = viewModel.title
+        navigationController?.setNavigationBarHidden(true, animated: false)
         view.backgroundColor = .systemBackground
+        
+        titleLabel.font = Design.Font.latoBold(size: 32)
+        titleLabel.text = viewModel.title
+        titleLabel.textColor = UIColor.accent
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         setupTableView()
         setupHierarchy()
@@ -44,10 +50,15 @@ class CharacterListViewController: UIViewController {
     }
     
     private func setupHierarchy() {
+        view.addSubview(titleLabel)
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Design.Layout.defaultPadding),
+            titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Design.Layout.defaultPadding),
+            
+            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
