@@ -41,6 +41,8 @@
 		FA65EECF2BE4055C0015A6E0 /* XCTestCase+makeGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EECE2BE4055C0015A6E0 /* XCTestCase+makeGetAllCharactersResponse.swift */; };
 		FA65EED12BE4111E0015A6E0 /* SpyHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EED02BE4111E0015A6E0 /* SpyHTTPClient.swift */; };
 		FA65EED32BE4154F0015A6E0 /* XCTestCase+charactersStubbedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EED22BE4154F0015A6E0 /* XCTestCase+charactersStubbedResponse.swift */; };
+		FA65EEDA2BE425AD0015A6E0 /* GetImageForCharacterRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EED92BE425AD0015A6E0 /* GetImageForCharacterRequestTests.swift */; };
+		FA65EEDC2BE425B80015A6E0 /* GetImageForCharacterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEDB2BE425B80015A6E0 /* GetImageForCharacterRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		FA65EECE2BE4055C0015A6E0 /* XCTestCase+makeGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+makeGetAllCharactersResponse.swift"; sourceTree = "<group>"; };
 		FA65EED02BE4111E0015A6E0 /* SpyHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyHTTPClient.swift; sourceTree = "<group>"; };
 		FA65EED22BE4154F0015A6E0 /* XCTestCase+charactersStubbedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+charactersStubbedResponse.swift"; sourceTree = "<group>"; };
+		FA65EED92BE425AD0015A6E0 /* GetImageForCharacterRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageForCharacterRequestTests.swift; sourceTree = "<group>"; };
+		FA65EEDB2BE425B80015A6E0 /* GetImageForCharacterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageForCharacterRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				FA65EED42BE424ED0015A6E0 /* Get All Characters */,
+				FA65EED72BE425840015A6E0 /* Get Image For Character */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				FA65EED62BE4256A0015A6E0 /* Get All Characters */,
+				FA65EED82BE425900015A6E0 /* Get Image For Character */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -330,6 +336,22 @@
 				FA0078F22BE2A34E002FEB2B /* GetAllCharactersRequestTests.swift */,
 			);
 			path = "Get All Characters";
+			sourceTree = "<group>";
+		};
+		FA65EED72BE425840015A6E0 /* Get Image For Character */ = {
+			isa = PBXGroup;
+			children = (
+				FA65EEDB2BE425B80015A6E0 /* GetImageForCharacterRequest.swift */,
+			);
+			path = "Get Image For Character";
+			sourceTree = "<group>";
+		};
+		FA65EED82BE425900015A6E0 /* Get Image For Character */ = {
+			isa = PBXGroup;
+			children = (
+				FA65EED92BE425AD0015A6E0 /* GetImageForCharacterRequestTests.swift */,
+			);
+			path = "Get Image For Character";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +461,7 @@
 				FA65EECA2BE3EB4A0015A6E0 /* CharacterListCellViewModel.swift in Sources */,
 				FA3FF73F2BE394950063F350 /* UIFont+toFont.swift in Sources */,
 				FA0078E62BE25B68002FEB2B /* CharacterListViewModel.swift in Sources */,
+				FA65EEDC2BE425B80015A6E0 /* GetImageForCharacterRequest.swift in Sources */,
 				FA3FF73D2BE392BE0063F350 /* Design.swift in Sources */,
 				FA3FF7432BE3A0920063F350 /* CharacterDetailsView.swift in Sources */,
 				FA0078BB2BE24589002FEB2B /* CharacterListViewController.swift in Sources */,
@@ -462,6 +485,7 @@
 				FA0078DF2BE25751002FEB2B /* XCTestCase+trackForMemoryLeaks.swift in Sources */,
 				FA65EED32BE4154F0015A6E0 /* XCTestCase+charactersStubbedResponse.swift in Sources */,
 				FA65EEC32BE3DF520015A6E0 /* CharacterListViewControllerSnapshotTests.swift in Sources */,
+				FA65EEDA2BE425AD0015A6E0 /* GetImageForCharacterRequestTests.swift in Sources */,
 				FA65EED12BE4111E0015A6E0 /* SpyHTTPClient.swift in Sources */,
 				FA65EEBF2BE3DD8B0015A6E0 /* UIViewController+snapshot.swift in Sources */,
 				FA0078F92BE2A46F002FEB2B /* SharedTestHelpers.swift in Sources */,
