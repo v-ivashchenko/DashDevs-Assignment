@@ -20,9 +20,12 @@ final class CharacterListViewModelTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    private func makeSUT() -> (CharacterListViewModel, SpyHTTPClient) {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (CharacterListViewModel, SpyHTTPClient) {
         let client = SpyHTTPClient()
         let sut = CharacterListViewModel(client: client)
+        
+        trackForMemoryLeaks(client, file: file, line: line)
+        trackForMemoryLeaks(sut, file: file, line: line)
         
         return (sut, client)
     }
