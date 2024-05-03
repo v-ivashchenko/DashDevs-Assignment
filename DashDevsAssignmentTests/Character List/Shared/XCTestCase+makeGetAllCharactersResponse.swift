@@ -25,7 +25,10 @@ extension XCTestCase {
                     "status": character.status,
                     "species": character.species,
                     "gender": character.gender,
-                    "image": character.image
+                    "image": character.image,
+                    "location": [
+                        "name": character.location.name
+                    ]
                 ] as [String: Any]
             }
         ]
@@ -39,8 +42,17 @@ extension XCTestCase {
         status: String = "any status",
         species: String = "any species",
         gender: String = "any gender",
-        image: String = "any url"
+        image: String = "any url",
+        location: String = "any location"
     ) -> SUT.Character {
-        .init(id: id, name: name, status: status, species: species, gender: gender, image: image)
+        .init(
+            id: id,
+            name: name,
+            status: status,
+            species: species,
+            gender: gender,
+            image: image,
+            location: .init(name: location)
+        )
     }
 }

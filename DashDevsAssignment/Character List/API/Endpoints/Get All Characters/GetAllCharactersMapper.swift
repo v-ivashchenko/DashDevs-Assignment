@@ -23,6 +23,11 @@ struct GetAllCharactersMapper {
         let species: String
         let gender: String
         let image: String
+        let location: Location
+    }
+    
+    struct Location: Decodable, Equatable {
+        let name: String
     }
     
     enum Error: Swift.Error, Equatable {
