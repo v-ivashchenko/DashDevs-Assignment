@@ -87,7 +87,7 @@ struct CharacterDetailsView: View {
                 Image(systemName: "arrow.left")
                     .resizable()
                     .padding()
-                    .background(.white)
+                    .background(Color(uiColor: .systemBackground))
                     .frame(width: 50, height: 50)
                     .clipShape(.circle)
             })
