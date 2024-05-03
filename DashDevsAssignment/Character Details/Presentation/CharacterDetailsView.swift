@@ -13,23 +13,29 @@ struct CharacterDetailsView: View {
     let location: String
     let image: UIImage?
     
+    var onBack: (() -> Void)?
+    
     var body: some View {
         ZStack {
             VStack {
-                if let image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .clipShape(
-                            .rect(
-                                topLeadingRadius: 25,
-                                bottomLeadingRadius: 50,
-                                bottomTrailingRadius: 50,
-                                topTrailingRadius: 25
-                            )
-                        )
-                        .frame(maxWidth: .infinity)
+                Group {
+                    if let image {
+                        Image(uiImage: image)
+                            .resizable()
+                    } else {
+                        Color.gray
+                    }
                 }
+                .aspectRatio(1, contentMode: .fit)
+                .clipShape(
+                    .rect(
+                        topLeadingRadius: 25,
+                        bottomLeadingRadius: 50,
+                        bottomTrailingRadius: 50,
+                        topTrailingRadius: 25
+                    )
+                )
+                .frame(maxWidth: .infinity)
                 
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
@@ -76,7 +82,7 @@ struct CharacterDetailsView: View {
             .ignoresSafeArea(edges: .top)
             
             Button(action: {
-                
+                onBack?()
             }, label: {
                 Image(systemName: "arrow.left")
                     .resizable()
