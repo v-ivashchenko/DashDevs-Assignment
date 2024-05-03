@@ -48,6 +48,7 @@
 		FA65EEE42BE42C030015A6E0 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEE32BE42C030015A6E0 /* ImageCache.swift */; };
 		FA65EEE72BE42C360015A6E0 /* InMemoryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEE62BE42C360015A6E0 /* InMemoryImageCache.swift */; };
 		FA65EEE92BE42C5D0015A6E0 /* InMemoryImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEE82BE42C5D0015A6E0 /* InMemoryImageCacheTests.swift */; };
+		FA65EEEB2BE4ADE50015A6E0 /* CharacterListFilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEEA2BE4ADE50015A6E0 /* CharacterListFilterButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		FA65EEE32BE42C030015A6E0 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		FA65EEE62BE42C360015A6E0 /* InMemoryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryImageCache.swift; sourceTree = "<group>"; };
 		FA65EEE82BE42C5D0015A6E0 /* InMemoryImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryImageCacheTests.swift; sourceTree = "<group>"; };
+		FA65EEEA2BE4ADE50015A6E0 /* CharacterListFilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListFilterButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			children = (
 				FA0078EE2BE29DED002FEB2B /* CharacterListCell.swift */,
 				FA0079012BE2BF63002FEB2B /* CharacterListCellView.swift */,
+				FA65EEEA2BE4ADE50015A6E0 /* CharacterListFilterButtonView.swift */,
 				FA0078BA2BE24589002FEB2B /* CharacterListViewController.swift */,
 			);
 			path = Presentation;
@@ -513,6 +516,7 @@
 				FA0078B72BE24589002FEB2B /* AppDelegate.swift in Sources */,
 				FA0078F52BE2A355002FEB2B /* GetAllCharactersRequest.swift in Sources */,
 				FA0078B92BE24589002FEB2B /* SceneDelegate.swift in Sources */,
+				FA65EEEB2BE4ADE50015A6E0 /* CharacterListFilterButtonView.swift in Sources */,
 				FA65EEE02BE426D50015A6E0 /* GetImageForCharacterMapper.swift in Sources */,
 				FA65EEB92BE3D5700015A6E0 /* URLSessionHTTPClient.swift in Sources */,
 			);
