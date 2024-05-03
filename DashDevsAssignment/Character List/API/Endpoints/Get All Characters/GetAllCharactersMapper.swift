@@ -7,7 +7,13 @@ import Foundation
 struct GetAllCharactersMapper {
     
     struct Response: Decodable, Equatable {
+        let info: Info
         let results: [Character]
+    }
+    
+    struct Info: Decodable, Equatable {
+        let next: String?
+        let prev: String?
     }
     
     struct Character: Decodable, Equatable {

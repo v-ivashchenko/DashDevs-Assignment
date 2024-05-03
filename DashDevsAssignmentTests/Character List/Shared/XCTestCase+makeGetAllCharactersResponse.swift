@@ -10,9 +10,14 @@ extension XCTestCase {
     typealias SUT = GetAllCharactersMapper
     
     func makeGetAllCharactersResponse(characters: [SUT.Character]) -> (model: SUT.Response, json: [String: Any]) {
-        let response = SUT.Response(results: characters)
+        let info = GetAllCharactersMapper.Info(next: nil, prev: nil)
+        let response = SUT.Response(info: info, results: characters)
         
         let json: [String: Any] = [
+            "info": [
+                "next": nil,
+                "prev": nil
+            ],
             "results": characters.map { character in
                 [
                     "id": character.id,
