@@ -9,6 +9,7 @@ class CharacterListViewController: UIViewController {
     private let viewModel: CharacterListViewModel
     
     private let titleLabel = UILabel()
+    private let filterStackView = UIStackView()
     private(set) var tableView = UITableView()
     
     init(viewModel: CharacterListViewModel) {
@@ -38,6 +39,9 @@ class CharacterListViewController: UIViewController {
         titleLabel.textColor = UIColor.accent
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        filterStackView.spacing = 10
+        filterStackView.translatesAutoresizingMaskIntoConstraints = false
+        
         setupTableView()
         setupHierarchy()
     }
@@ -51,14 +55,31 @@ class CharacterListViewController: UIViewController {
     
     private func setupHierarchy() {
         view.addSubview(titleLabel)
+        view.addSubview(filterStackView)
         view.addSubview(tableView)
+        
+        viewModel.filters.forEach { filter in
+            let rootView = CharacterListFilterButtonView(text: filter) {
+                
+            }
+            let hostingController = UIHostingController(rootView: rootView)
+            hostingController.view.setContentCompressionResistancePriority(.required, for: .horizontal)
+            hostingController.view.setContentHuggingPriority(.required, for: .horizontal)
+            
+            addChild(hostingController)
+            filterStackView.addArrangedSubview(hostingController.view)
+            hostingController.didMove(toParent: self)
+        }
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Design.Layout.defaultPadding),
             titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Design.Layout.defaultPadding),
             
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            filterStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Design.Layout.defaultPadding),
+            filterStackView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: filterStackView.bottomAnchor, constant: Design.Layout.defaultPadding),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
