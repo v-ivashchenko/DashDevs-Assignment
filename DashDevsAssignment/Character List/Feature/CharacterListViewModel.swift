@@ -71,10 +71,10 @@ class CharacterListViewModel {
         }
     }
     
-    func filter(by searchText: String, completion: @escaping () -> Void) {
+    func filter(by title: String, completion: @escaping () -> Void) {
         Task {
             queue.sync {
-                filteredCharacters = characters.filter { $0.status.title == searchText }
+                filteredCharacters = characters.filter { $0.status.title == title }
             }
             
             await MainActor.run {
