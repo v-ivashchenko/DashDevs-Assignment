@@ -10,6 +10,7 @@ struct CharacterListCellViewModel: Equatable {
     let name: String
     let species: String
     let imagePath: String
+    let status: String
     
     var image: UIImage?
     var imageURL: URL? { .init(string: imagePath) }

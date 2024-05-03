@@ -59,8 +59,11 @@ class CharacterListViewController: UIViewController {
         view.addSubview(tableView)
         
         viewModel.filters.forEach { filter in
-            let rootView = CharacterListFilterButtonView(text: filter) {
-                
+            let rootView = CharacterListFilterButtonView(text: filter) { [weak self] in
+                guard let self else { return }
+                self.viewModel.filter(by: filter) {
+                    self.tableView.reloadData()
+                }
             }
             let hostingController = UIHostingController(rootView: rootView)
             hostingController.view.setContentCompressionResistancePriority(.required, for: .horizontal)

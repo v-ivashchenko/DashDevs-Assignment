@@ -12,11 +12,12 @@ class CharacterListViewModel {
     private let queue = DispatchQueue(label: Bundle.main.bundleIdentifier ?? "")
     
     private(set) var title = "Characters"
-    private(set) var filters = [String]()
+    private(set) var filters = ["Alive", "Dead", "Unknown"]
     private(set) var characters = [CharacterListCellViewModel]()
+    private(set) var filteredCharacters = [CharacterListCellViewModel]()
     
     var numberOfRowsInSection: Int {
-        characters.count
+        filteredCharacters.count
     }
     
     init(client: HTTPClient, baseURL: URL, imageCache: ImageCache) {
@@ -30,7 +31,7 @@ class CharacterListViewModel {
         imageLoadingCompletion: @escaping (UIImage) -> Void
     ) -> CharacterListCellViewModel {
         queue.async {
-            if self.characters[indexPath.row].image == nil {
+            if self.filteredCharacters[indexPath.row].image == nil {
                 Task {
                     let image = try await self.loadImage(at: indexPath)
                     
@@ -41,7 +42,7 @@ class CharacterListViewModel {
             }
         }
         
-        return characters[indexPath.row]
+        return filteredCharacters[indexPath.row]
     }
     
     func fetchFirstPage(completion: @escaping () -> Void) {
@@ -53,8 +54,21 @@ class CharacterListViewModel {
                 characters = try GetAllCharactersMapper.map(data: data, from: response)
                     .results
                     .map {
-                        .init(id: String($0.id), name: $0.name, species: $0.species, imagePath: $0.image)
+                        .init(id: String($0.id), name: $0.name, species: $0.species, imagePath: $0.image, status: $0.status)
                     }
+                filteredCharacters = characters
+            }
+            
+            await MainActor.run {
+                completion()
+            }
+        }
+    }
+    
+    func filter(by searchText: String, completion: @escaping () -> Void) {
+        Task {
+            self.queue.sync {
+                self.filteredCharacters = self.characters.filter { $0.status == searchText }
             }
             
             await MainActor.run {
@@ -65,7 +79,7 @@ class CharacterListViewModel {
     
     private func loadImage(at indexPath: IndexPath) async throws -> UIImage {
         let character = queue.sync {
-            characters[indexPath.row]
+            filteredCharacters[indexPath.row]
         }
         
         if let image = try await imageCache.image(by: character.imagePath) {
@@ -92,6 +106,10 @@ class CharacterListViewModel {
             
             if let index = characters.firstIndex(where: { $0.imagePath == character.imagePath }) {
                 characters[index] = viewModel
+            }
+            
+            if let index = filteredCharacters.firstIndex(where: { $0.imagePath == character.imagePath }) {
+                filteredCharacters[index] = viewModel
             }
         }
     }
