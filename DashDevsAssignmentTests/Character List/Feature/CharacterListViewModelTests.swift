@@ -33,7 +33,7 @@ final class CharacterListViewModelTests: XCTestCase {
     
     func test_fetchFirstPage_deliversMappedCharacters() {
         let characters = [makeCharacter(), makeCharacter()]
-        let expectedRequest = GetAllCharactersRequest.request(to: baseURL)
+        let expectedRequest = GetAllCharactersRequest.request(to: baseURL, page: 1)
         let (sut, client) = makeSUT(characters: characters)
         let expectation = self.expectation(description: "Wait for completion")
         

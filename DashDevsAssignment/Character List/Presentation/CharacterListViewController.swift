@@ -120,6 +120,14 @@ extension CharacterListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension CharacterListViewController: UITableViewDelegate {
  
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row > viewModel.distanceFromEndCell {
+            viewModel.fetchNextPage() {
+                tableView.reloadData()
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         onSelect?(viewModel.filteredCharacters[indexPath.row])

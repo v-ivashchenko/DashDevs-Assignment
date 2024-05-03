@@ -8,10 +8,10 @@ import XCTest
 final class GetAllCharactersRequestTests: XCTestCase {
     
     func test_request_returnsConcreteRequest() {
-        let sut = GetAllCharactersRequest.request(to: baseURL)
+        let sut = GetAllCharactersRequest.request(to: baseURL, page: 1)
         
         XCTAssertEqual(sut.httpMethod, "GET")
-        XCTAssertEqual(sut.url, baseURL.appending(path: "api/character"))
+        XCTAssertEqual(sut.url?.absoluteString, baseURL.absoluteString + "/api/character?page=1")
         XCTAssertNil(sut.httpBody)
     }
 }
