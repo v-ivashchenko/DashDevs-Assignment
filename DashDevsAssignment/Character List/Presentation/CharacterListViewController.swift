@@ -109,6 +109,8 @@ extension CharacterListViewController: UITableViewDataSource {
         
         cell.contentConfiguration = UIHostingConfiguration {
             CharacterListCellView(name: model.name, species: model.species, image: model.image)
+                .padding()
+                .background(model.status.background)
         }
         
         return cell

@@ -11,7 +11,7 @@ struct CharacterDetailsView: View {
     let name: String
     let species: String
     let gender: String
-    let status: String
+    let status: CharacterStatus
     let location: String
     let image: UIImage?
     
@@ -56,7 +56,7 @@ struct CharacterDetailsView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Text(status)
+                    Text(status.title)
                         .padding(10)
                         .background(
                             Capsule()
@@ -103,7 +103,7 @@ struct CharacterDetailsView: View {
         name: "Zephyr",
         species: "Elf",
         gender: "Male",
-        status: "Alive",
+        status: .alive,
         location: "Earth",
         image: UIImage(systemName: "photo.circle")
     )
