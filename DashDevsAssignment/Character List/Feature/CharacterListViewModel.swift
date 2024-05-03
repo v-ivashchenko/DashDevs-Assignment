@@ -12,7 +12,7 @@ class CharacterListViewModel {
     private let queue = DispatchQueue(label: Bundle.main.bundleIdentifier ?? "")
     
     private(set) var title = "Characters"
-    private(set) var filters = ["Alive", "Dead", "Unknown"]
+    private(set) var filters = CharacterStatus.allCases.map { $0.title.capitalized }
     private(set) var characters = [CharacterListCellViewModel]()
     private(set) var filteredCharacters = [CharacterListCellViewModel]()
     
@@ -54,7 +54,13 @@ class CharacterListViewModel {
                 characters = try GetAllCharactersMapper.map(data: data, from: response)
                     .results
                     .map {
-                        .init(id: String($0.id), name: $0.name, species: $0.species, imagePath: $0.image, status: $0.status)
+                        .init(
+                            id: String($0.id),
+                            name: $0.name,
+                            species: $0.species,
+                            imagePath: $0.image,
+                            status: CharacterStatus(rawValue: $0.status)
+                        )
                     }
                 filteredCharacters = characters
             }
@@ -67,8 +73,8 @@ class CharacterListViewModel {
     
     func filter(by searchText: String, completion: @escaping () -> Void) {
         Task {
-            self.queue.sync {
-                self.filteredCharacters = self.characters.filter { $0.status == searchText }
+            queue.sync {
+                filteredCharacters = characters.filter { $0.status.title == searchText }
             }
             
             await MainActor.run {
