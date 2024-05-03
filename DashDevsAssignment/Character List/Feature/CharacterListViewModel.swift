@@ -73,7 +73,9 @@ class CharacterListViewModel {
                             name: $0.name,
                             species: $0.species,
                             imagePath: $0.image,
-                            status: CharacterStatus(rawValue: $0.status)
+                            status: CharacterStatus(rawValue: $0.status),
+                            gender: $0.gender,
+                            location: $0.location.name
                         )
                     }
                 )

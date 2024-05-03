@@ -20,9 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let rootView = CharacterDetailsView(
                 name: viewModel.name,
                 species: viewModel.species,
-                gender: "gender",
+                gender: viewModel.gender,
                 status: viewModel.status,
-                location: "loc",
+                location: viewModel.location,
                 image: viewModel.image
             )
             let hostingController = UIHostingController(rootView: rootView)
