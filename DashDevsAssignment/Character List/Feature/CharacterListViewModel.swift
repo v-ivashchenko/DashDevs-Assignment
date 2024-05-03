@@ -10,6 +10,7 @@ class CharacterListViewModel {
     private let baseURL: URL
     private let imageCache: ImageCache
     private let queue = DispatchQueue(label: Bundle.main.bundleIdentifier ?? "")
+    private var selectedFilters = Set(CharacterStatus.allCases.map { $0.title.capitalized })
     
     private(set) var title = "Characters"
     private(set) var filters = CharacterStatus.allCases.map { $0.title.capitalized }
@@ -74,7 +75,13 @@ class CharacterListViewModel {
     func filter(by title: String, completion: @escaping () -> Void) {
         Task {
             queue.sync {
-                filteredCharacters = characters.filter { $0.status.title == title }
+                if selectedFilters.contains(title) {
+                    selectedFilters.remove(title)
+                } else {
+                    selectedFilters.insert(title)
+                }
+                
+                filteredCharacters = selectedFilters.isEmpty ? characters : characters.filter { selectedFilters.contains($0.status.title) }
             }
             
             await MainActor.run {
