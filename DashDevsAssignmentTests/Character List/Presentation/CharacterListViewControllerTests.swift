@@ -36,7 +36,7 @@ final class CharacterListViewControllerTests: XCTestCase {
         line: UInt = #line
     ) -> CharacterListViewController {
         let client = SpyHTTPClient(stubbedResponse: charactersStubbedResponse(characters: characters))
-        let viewModel = CharacterListViewModel(client: client, baseURL: baseURL)
+        let viewModel = CharacterListViewModel(client: client, baseURL: baseURL, imageCache: InMemoryImageCache())
         let sut = CharacterListViewController(viewModel: viewModel)
         
         sut.loadViewIfNeeded()

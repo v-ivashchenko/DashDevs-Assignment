@@ -2,7 +2,7 @@
 //  Copyright © 2024 Vitalii Ivashchenko. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
 class CharacterListCell: UITableViewCell {
     

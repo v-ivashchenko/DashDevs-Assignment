@@ -12,7 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private lazy var navigationController = UINavigationController(rootViewController: rootViewController)
     private lazy var rootViewController: CharacterListViewController = {
         let client = URLSessionHTTPClient()
-        let viewModel = CharacterListViewModel(client: client, baseURL: baseURL)
+        let imageCache = InMemoryImageCache()
+        let viewModel = CharacterListViewModel(client: client, baseURL: baseURL, imageCache: imageCache)
         let viewController = CharacterListViewController(viewModel: viewModel)
         
         return viewController

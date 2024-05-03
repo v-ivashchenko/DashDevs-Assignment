@@ -54,7 +54,7 @@ final class CharacterListViewModelTests: XCTestCase {
         line: UInt = #line
     ) -> (CharacterListViewModel, SpyHTTPClient) {
         let client = SpyHTTPClient(stubbedResponse: charactersStubbedResponse(characters: characters))
-        let sut = CharacterListViewModel(client: client, baseURL: baseURL)
+        let sut = CharacterListViewModel(client: client, baseURL: baseURL, imageCache: InMemoryImageCache())
         
         trackForMemoryLeaks(client, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)

@@ -5,7 +5,7 @@
 import SwiftUI
 
 class CharacterListViewController: UIViewController {
-
+    
     private let viewModel: CharacterListViewModel
     
     private let titleLabel = UILabel()
@@ -74,9 +74,12 @@ extension CharacterListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CharacterListCell.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CharacterListCell.reuseIdentifier, for: indexPath) as! CharacterListCell
         
-        let model = viewModel.cellViewModel(at: indexPath)
+        let model = viewModel.cellViewModel(at: indexPath) { receivedImage in
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
+        
         cell.contentConfiguration = UIHostingConfiguration {
             CharacterListCellView(name: model.name, species: model.species, image: model.image)
         }

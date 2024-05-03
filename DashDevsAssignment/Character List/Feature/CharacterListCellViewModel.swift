@@ -5,8 +5,12 @@
 import UIKit
 
 struct CharacterListCellViewModel: Equatable {
+    
     let id: String
     let name: String
     let species: String
-    let image: UIImage?
+    let imagePath: String
+    
+    var image: UIImage?
+    var imageURL: URL? { .init(string: imagePath) }
 }
