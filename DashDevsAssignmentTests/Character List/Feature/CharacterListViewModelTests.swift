@@ -13,10 +13,10 @@ final class CharacterListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.title, "Characters")
     }
     
-    func test_filters_areEmptyOnInit() {
+    func test_filters_areNotEmpty() {
         let (sut, _) = makeSUT()
         
-        XCTAssertEqual(sut.filters, [])
+        XCTAssertFalse(sut.filters.isEmpty)
     }
     
     func test_fetchFirstPage_mustCompleteOnMainThread() {
