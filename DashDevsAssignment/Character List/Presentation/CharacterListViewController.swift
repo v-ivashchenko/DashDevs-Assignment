@@ -12,6 +12,8 @@ class CharacterListViewController: UIViewController {
     private let filterStackView = UIStackView()
     private(set) var tableView = UITableView()
     
+    var onSelect: ((CharacterListCellViewModel) -> Void)?
+    
     init(viewModel: CharacterListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -48,6 +50,7 @@ class CharacterListViewController: UIViewController {
     
     private func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.register(CharacterListCell.self, forCellReuseIdentifier: CharacterListCell.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -109,5 +112,14 @@ extension CharacterListViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension CharacterListViewController: UITableViewDelegate {
+ 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        onSelect?(viewModel.filteredCharacters[indexPath.row])
     }
 }

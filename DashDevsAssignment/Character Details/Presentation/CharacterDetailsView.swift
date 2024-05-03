@@ -6,14 +6,14 @@ import SwiftUI
 
 struct CharacterDetailsView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     let name: String
     let species: String
     let gender: String
     let status: String
     let location: String
     let image: UIImage?
-    
-    var onBack: (() -> Void)?
     
     var body: some View {
         ZStack {
@@ -82,7 +82,7 @@ struct CharacterDetailsView: View {
             .ignoresSafeArea(edges: .top)
             
             Button(action: {
-                onBack?()
+                dismiss()
             }, label: {
                 Image(systemName: "arrow.left")
                     .resizable()
