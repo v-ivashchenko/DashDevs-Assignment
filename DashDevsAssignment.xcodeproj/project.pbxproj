@@ -50,6 +50,7 @@
 		FA65EEE92BE42C5D0015A6E0 /* InMemoryImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEE82BE42C5D0015A6E0 /* InMemoryImageCacheTests.swift */; };
 		FA65EEEB2BE4ADE50015A6E0 /* CharacterListFilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEEA2BE4ADE50015A6E0 /* CharacterListFilterButtonView.swift */; };
 		FA65EEEF2BE4CC670015A6E0 /* UINavigationController+gestureRecognizerShouldBegin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEEE2BE4CC670015A6E0 /* UINavigationController+gestureRecognizerShouldBegin.swift */; };
+		FA65EEF12BE4D1460015A6E0 /* CharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65EEF02BE4D1460015A6E0 /* CharacterStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		FA65EEE82BE42C5D0015A6E0 /* InMemoryImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryImageCacheTests.swift; sourceTree = "<group>"; };
 		FA65EEEA2BE4ADE50015A6E0 /* CharacterListFilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListFilterButtonView.swift; sourceTree = "<group>"; };
 		FA65EEEE2BE4CC670015A6E0 /* UINavigationController+gestureRecognizerShouldBegin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+gestureRecognizerShouldBegin.swift"; sourceTree = "<group>"; };
+		FA65EEF02BE4D1460015A6E0 /* CharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			children = (
 				FA65EEC92BE3EB4A0015A6E0 /* CharacterListCellViewModel.swift */,
 				FA0078E52BE25B68002FEB2B /* CharacterListViewModel.swift */,
+				FA65EEF02BE4D1460015A6E0 /* CharacterStatus.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				FA3FF73F2BE394950063F350 /* UIFont+toFont.swift in Sources */,
 				FA65EEE42BE42C030015A6E0 /* ImageCache.swift in Sources */,
 				FA0078E62BE25B68002FEB2B /* CharacterListViewModel.swift in Sources */,
+				FA65EEF12BE4D1460015A6E0 /* CharacterStatus.swift in Sources */,
 				FA65EEDC2BE425B80015A6E0 /* GetImageForCharacterRequest.swift in Sources */,
 				FA3FF73D2BE392BE0063F350 /* Design.swift in Sources */,
 				FA3FF7432BE3A0920063F350 /* CharacterDetailsView.swift in Sources */,
