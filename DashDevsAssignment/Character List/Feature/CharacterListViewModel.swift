@@ -11,7 +11,7 @@ class CharacterListViewModel {
     private let imageCache: ImageCache
     private let queue = DispatchQueue(label: Bundle.main.bundleIdentifier ?? "")
     private var selectedFilters = Set(CharacterStatus.allCases.map { $0.title.capitalized })
-    private var currentPage = 1
+    private var currentPage = 0
     private var nextPage: String?
     private var fetchNextPageTask: Task<Void, Error>?
     
@@ -53,8 +53,12 @@ class CharacterListViewModel {
         return filteredCharacters[indexPath.row]
     }
     
-    func fetchFirstPage(completion: @escaping () -> Void) {
-        Task {
+    func fetchNextPage(completion: @escaping () -> Void) {
+        guard fetchNextPageTask == nil else { return }
+        guard currentPage == 0 || nextPage != nil else { return }
+        
+        fetchNextPageTask = Task {
+            currentPage += 1
             let request = GetAllCharactersRequest.request(to: baseURL, page: currentPage)
             let (data, response) = try await client.data(for: request)
             
@@ -62,9 +66,8 @@ class CharacterListViewModel {
                 let mappedResponse = try GetAllCharactersMapper.map(data: data, from: response)
                 nextPage = mappedResponse.info.next
                 
-                characters = mappedResponse
-                    .results
-                    .map {
+                characters.append(contentsOf: mappedResponse
+                    .results.map {
                         .init(
                             id: String($0.id),
                             name: $0.name,
@@ -73,37 +76,7 @@ class CharacterListViewModel {
                             status: CharacterStatus(rawValue: $0.status)
                         )
                     }
-                filteredCharacters = characters
-            }
-            
-            await MainActor.run {
-                completion()
-            }
-        }
-    }
-    
-    func fetchNextPage(completion: @escaping () -> Void) {
-        guard fetchNextPageTask == nil else { return }
-        
-        fetchNextPageTask = Task {
-            guard nextPage != nil else { return }
-            let request = GetAllCharactersRequest.request(to: baseURL, page: currentPage + 1)
-            let (data, response) = try await client.data(for: request)
-            
-            try queue.sync {
-                currentPage += 1
-                
-                let mappedResponse = try GetAllCharactersMapper.map(data: data, from: response)
-                nextPage = mappedResponse.info.next
-                characters.append(contentsOf: mappedResponse.results.map {
-                    .init(
-                        id: String($0.id),
-                        name: $0.name,
-                        species: $0.species,
-                        imagePath: $0.image,
-                        status: CharacterStatus(rawValue: $0.status)
-                    )
-                })
+                )
                 filteredCharacters = characters
             }
             
