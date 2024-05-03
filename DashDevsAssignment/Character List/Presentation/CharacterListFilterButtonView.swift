@@ -7,6 +7,7 @@ import SwiftUI
 struct CharacterListFilterButtonView: View {
     
     let text: String
+    var isActive: Bool = true
     let action: (() -> Void)?
     
     var body: some View {
@@ -15,7 +16,7 @@ struct CharacterListFilterButtonView: View {
         } label: {
             Text(text)
                 .font(Design.Font.latoBold().toFont)
-                .foregroundStyle(.accent)
+                .foregroundStyle(isActive ? .accent : .gray)
                 .padding(10)
                 .overlay {
                     Capsule()

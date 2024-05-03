@@ -10,13 +10,13 @@ class CharacterListViewModel {
     private let baseURL: URL
     private let imageCache: ImageCache
     private let queue = DispatchQueue(label: Bundle.main.bundleIdentifier ?? "")
-    private var selectedFilters = Set(CharacterStatus.allCases.map { $0.title.capitalized })
     private var currentPage = 0
     private var nextPage: String?
     private var fetchNextPageTask: Task<Void, Error>?
     
     private(set) var title = "Characters"
     private(set) var filters = CharacterStatus.allCases.map { $0.title.capitalized }
+    private(set) var selectedFilters = Set(CharacterStatus.allCases.map { $0.title.capitalized })
     private(set) var characters = [CharacterListCellViewModel]()
     private(set) var filteredCharacters = [CharacterListCellViewModel]()
     
@@ -89,7 +89,7 @@ class CharacterListViewModel {
         }
     }
     
-    func filter(by title: String, completion: @escaping () -> Void) {
+    func filter(by title: String, completion: @escaping (Set<String>) -> Void) {
         Task {
             queue.sync {
                 if selectedFilters.contains(title) {
@@ -102,7 +102,7 @@ class CharacterListViewModel {
             }
             
             await MainActor.run {
-                completion()
+                completion(selectedFilters)
             }
         }
     }

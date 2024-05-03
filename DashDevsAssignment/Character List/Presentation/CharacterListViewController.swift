@@ -10,6 +10,7 @@ class CharacterListViewController: UIViewController {
     
     private let titleLabel = UILabel()
     private let filterStackView = UIStackView()
+    private var selectedFilters = Set<String>()
     private(set) var tableView = UITableView()
     
     var onSelect: ((CharacterListCellViewModel) -> Void)?
@@ -26,6 +27,7 @@ class CharacterListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        selectedFilters = viewModel.selectedFilters
         setupLayout()
         viewModel.fetchNextPage { [weak self] in
             self?.tableView.reloadData()
@@ -61,21 +63,7 @@ class CharacterListViewController: UIViewController {
         view.addSubview(filterStackView)
         view.addSubview(tableView)
         
-        viewModel.filters.forEach { filter in
-            let rootView = CharacterListFilterButtonView(text: filter) { [weak self] in
-                guard let self else { return }
-                self.viewModel.filter(by: filter) {
-                    self.tableView.reloadData()
-                }
-            }
-            let hostingController = UIHostingController(rootView: rootView)
-            hostingController.view.setContentCompressionResistancePriority(.required, for: .horizontal)
-            hostingController.view.setContentHuggingPriority(.required, for: .horizontal)
-            
-            addChild(hostingController)
-            filterStackView.addArrangedSubview(hostingController.view)
-            hostingController.didMove(toParent: self)
-        }
+        addFilters()
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -90,6 +78,35 @@ class CharacterListViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
+    }
+    
+    private func updateFilterStackView() {
+        filterStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        addFilters()
+    }
+    
+    private func addFilters() {
+        viewModel.filters.forEach { filter in
+            let rootView = CharacterListFilterButtonView(text: filter, isActive: isFilterActive(filter)) { [weak self] in
+                guard let self else { return }
+                self.viewModel.filter(by: filter) { selectedFilters in
+                    self.selectedFilters = selectedFilters
+                    self.updateFilterStackView()
+                    self.tableView.reloadData()
+                }
+            }
+            let hostingController = UIHostingController(rootView: rootView)
+            hostingController.view.setContentCompressionResistancePriority(.required, for: .horizontal)
+            hostingController.view.setContentHuggingPriority(.required, for: .horizontal)
+            
+            addChild(hostingController)
+            filterStackView.addArrangedSubview(hostingController.view)
+            hostingController.didMove(toParent: self)
+        }
+    }
+    
+    private func isFilterActive(_ filter: String) -> Bool {
+        selectedFilters.contains(filter)
     }
 }
 
