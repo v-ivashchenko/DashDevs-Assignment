@@ -32,7 +32,7 @@ Create an iOS application that fetches data from the [Rick and Morty API](https:
 ## Prerequisites
 - Xcode 15+: I'm using `ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS` setting
 - iOS 16+: as far as I know that's a common practice to support the last two versions of iOS (unless otherwise stated)
-- Tests should be run on a simulator only because of snapshots
+- [!] Tests should be run on a simulator only because of snapshots and the project should NOT be located on iCloud (otherwise you will have to record snapshot tests first and then assert them)
 
 ## Developer's notes
 
@@ -72,3 +72,7 @@ Create an iOS application that fetches data from the [Rick and Morty API](https:
   - I have written some tests, but because of lack of time I haven't covered the whole project
   - I haven't implemented any sort of localization
   - `CharacterListCellViewModel` contains even data that it doesn't need (`gender` and `location`) - only the child needs it. This separation could be done by making a request from the child view `CharacterDetailsView` to retrive this data from the server
+
+### Bugs
+> **Note.**
+> I want to mention that I've discovered at least one bug that I couldn't fix quickly. If scroll very quickly it can crash
